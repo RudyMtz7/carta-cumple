@@ -1,0 +1,355 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Coiny&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.app {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  height: 100svh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.panel {
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  padding: 2rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 800px;
+
+  padding: 3rem;
+
+  backdrop-filter: blur(12px);
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  border-radius: 24px;
+
+  animation: fadeUp 1.2s ease forwards;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card h1 {
+  font-family: "Coiny", cursive;
+
+  font-size: clamp(2rem, 5vw, 3.5rem);
+
+  color: white;
+
+  text-align: center;
+
+  margin-bottom: 1.5rem;
+
+  letter-spacing: 1px;
+
+  text-shadow:
+    0 2px 8px rgba(0,0,0,0.15);
+}
+
+.card p {
+  font-size: clamp(1rem, 3vw, 1.6rem);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .panel {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+    border-radius: 18px;
+  }
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: linear-gradient(
+    -45deg,
+    #ff758c,
+    #ff7eb3,
+    #9b6dff,
+    #6fa8ff
+  );
+  background-size: 400% 400%;
+
+  animation: gradientMove 18s ease infinite;
+}
+
+.heart {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  background: rgba(255,255,255,0.3);
+
+  transform: rotate(45deg);
+  z-index: -1;
+
+  animation: floatUp linear infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.heart::before {
+  left: -9px;
+}
+
+.heart::after {
+  top: -9px;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatUp {
+  from {
+    bottom: -50px;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  to {
+    bottom: 110vh;
+    opacity: 0;
+  }
+}
+
+.bg_heart {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  top: 110%;
+
+  transform: rotate(-45deg);
+
+  animation-name: love;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.heart::before {
+  width: 100%;
+  height: 100%;
+  top: -50%;
+  left: 0;
+}
+
+.heart::after {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: -50%;
+}
+
+@keyframes love {
+  from {
+    top: 110%;
+    opacity: 1;
+  }
+
+  to {
+    top: -20%;
+    opacity: 0;
+    transform: rotate(-45deg) scale(1.5);
+  }
+}
+
+.memory-image {
+  width: 100%;
+  max-height: 400px;
+
+  object-fit: cover;
+
+  border-radius: 18px;
+
+  margin-bottom: 2rem;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.25);
+}
+
+
+.hero-panel {
+  min-height: 100svh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  scroll-snap-align: start;
+}
+
+.hero-content {
+  animation: fadeIn 2s ease;
+}
+
+.hero-title {
+  font-family: "Great Vibes", cursive;
+
+  font-size: clamp(4rem, 12vw, 8rem);
+
+  color: white;
+
+  margin: 0;
+
+  text-shadow:
+    0 0 15px rgba(255,255,255,.25);
+}
+
+.hero-title {
+  font-family: "Great Vibes", cursive;
+
+  font-size: clamp(3rem, 10vw, 6rem);
+
+  line-height: 1.1;
+
+  margin-bottom: 2rem;
+
+  color: white;
+
+  text-align: center;
+}
+
+.hero-subtitle {
+  font-family: "Poppins", sans-serif;
+
+  color: rgba(255,255,255,.9);
+
+  font-size: 1.2rem;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.scroll-hint {
+  display: block;
+
+  margin-top: 3rem;
+
+  color: rgba(255,255,255,.6);
+
+  animation: bounce 2s infinite;
+}
+
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.15);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
