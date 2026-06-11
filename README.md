@@ -1,3 +1,31 @@
+# 💜 Carta para Regicita
+
+Carta de cumpleaños para la Regi.
+
+**15 de junio del 2026**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
