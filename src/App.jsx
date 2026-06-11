@@ -4,13 +4,12 @@ import HeartBackground from "./HeartBackground";
 const paragraphs = [
   {
     title: "To My Favorite Person",
-    image: "/images/regi_trix.png",
+    image: `${import.meta.env.BASE_URL}images/regi_trix.png`,
     text: `Somehow, in a world full of people, I found you. What started as ordinary conversations became the part of my day I looked forward to the most. You have a way of making even the smallest moments feel meaningful, and for that, I am endlessly grateful.`
   },
   {
     title: "The Little Things",
-    image: "/images/boletos.PNG",
-    
+    image: `${import.meta.env.BASE_URL}images/toki.png`,
     text: `It's not just the big memories I treasure. It's the random jokes, the late-night conversations, the comfortable silence, and the way you make everything feel lighter. Those moments have become some of my favorite memories.`
   },
   {
