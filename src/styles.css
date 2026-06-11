@@ -264,10 +264,13 @@ html,
 }
 
 .hero-title {
-  font-family: "Great+Vibes", cursive !important;
+  font-family: "DynaPuff", "Coiny", system-ui, sans-serif !important;
+
   font-size: clamp(3rem, 10vw, 6rem);
   line-height: 1.1;
+
   margin-bottom: 2rem;
+
   color: white;
   text-align: center;
 }
